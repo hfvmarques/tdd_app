@@ -1,1 +1,23 @@
 <h1>New Customer</h1>
+
+<%= form_for @customer do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <br>
+  <%= form.label :phone %>
+  <%= form.text_field :phone %>
+  <br>
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+  <br>
+  <%= form.label :gender %>
+  <br>
+  <% { 'M': 'Male','F': 'Female','O': 'Other'}.each do |key, value| %>
+    <%= form.radio_button :gender, key %> <%= value %>
+  <% end %>
+  <br>
+  <%= form.submit 'Create Customer' %>
+<% end %>
