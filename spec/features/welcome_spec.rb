@@ -6,7 +6,7 @@ feature "Welcome", type: :feature do
       visit root_path
     end
 
-    scenario { expect(page).to have_content 'Welcome to the Sample App!' }
+    scenario { expect(page).to have_content('Welcome to the Sample App!') }
     scenario { expect(find('ul li')).to have_link('Customers') }
   end
 end
