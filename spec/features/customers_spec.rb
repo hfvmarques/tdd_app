@@ -22,6 +22,12 @@ feature "Customers", type: :feature do
         end
 
         scenario { expect(page).to have_content('New Customer') }
+
+        scenario 'does not register invalid customer' do
+          click_on 'Create Customer'
+          expect(page).to have_content("can't be blank")
+        end
+
         context 'fill in the form' do
           before do
             fill_in 'Name', with: Faker::Name.name
